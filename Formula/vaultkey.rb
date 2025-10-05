@@ -4,9 +4,9 @@ class Vaultkey < Formula
   desc "Military-grade password manager CLI"
   homepage "https://github.com/dhruvkulkarni02/vaultkey"
   url "https://github.com/dhruvkulkarni02/vaultkey/archive/e585be7f27f93b31eb02d5241b0941db0e64fef5.tar.gz"
+  version "1.0.1"
   sha256 "a73787a9a4e5eaaa1ea54b3a2d61619eb12146ea5ea0e500ff835bb95ea7224a"
   license "MIT"
-  version "1.0.1"
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
