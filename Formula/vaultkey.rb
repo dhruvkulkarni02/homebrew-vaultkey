@@ -7,7 +7,6 @@ class Vaultkey < Formula
   version "1.0.1"
   sha256 "a73787a9a4e5eaaa1ea54b3a2d61619eb12146ea5ea0e500ff835bb95ea7224a"
   license "MIT"
-  disable! date: "2025-01-22", because: :repo_archived
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
