@@ -7,6 +7,11 @@ class Vaultkey < Formula
   sha256 "557f14507ad5466fa69e3fc54e2434be858fac65795cbfd7a2d7e8c50349ee1c"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/dhruvkulkarni02/homebrew-vaultkey/releases/download/vaultkey-2.0.0"
+    sha256 cellar: :any, arm64_tahoe: "bd8b50b4550ce933c8af6e0b00a9ab28120001e530cd61dd3eea80257762de54"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
