@@ -1,18 +1,29 @@
-# Dhruvkulkarni02 Vaultkey
+# Homebrew tap for VaultKey
 
-## How do I install these formulae?
+[VaultKey](https://github.com/dhruvkulkarni02/vaultkey) is a local, offline password manager for the terminal, with Argon2id key derivation and AES-256-GCM encryption.
 
-`brew install dhruvkulkarni02/vaultkey/<formula>`
+## Install
 
-Or `brew tap dhruvkulkarni02/vaultkey` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "dhruvkulkarni02/vaultkey"
-brew "<formula>"
+```bash
+brew install dhruvkulkarni02/vaultkey/vaultkey
 ```
 
-## Documentation
+This taps the repository and installs the `vk` and `vaultkey` commands. Then create a vault:
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```bash
+vk init
+```
+
+Upgrade with `brew upgrade vaultkey`. See the [VaultKey README](https://github.com/dhruvkulkarni02/vaultkey#readme) for usage.
+
+## Platforms
+
+| Platform | Install |
+|----------|---------|
+| macOS on Apple Silicon | Prebuilt bottle, installs in seconds |
+| Linux (x86_64) | Prebuilt bottle |
+| macOS on Intel | Builds from source, including Rust and Python, because Homebrew no longer ships Intel bottles for them. Installing with `pip` is much faster; see the VaultKey README. |
+
+## Maintenance
+
+Each formula update goes through a pull request. `brew test-bot` builds, tests and bottles it on Linux and Apple Silicon macOS. Adding the `pr-pull` label publishes the bottles and merges the update.

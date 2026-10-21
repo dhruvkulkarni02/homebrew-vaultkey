@@ -3,19 +3,21 @@ class Vaultkey < Formula
 
   desc "Local, offline password manager with Argon2id and AES-256-GCM"
   homepage "https://github.com/dhruvkulkarni02/vaultkey"
-  url "https://github.com/dhruvkulkarni02/vaultkey/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "557f14507ad5466fa69e3fc54e2434be858fac65795cbfd7a2d7e8c50349ee1c"
+  url "https://github.com/dhruvkulkarni02/vaultkey/releases/download/v2.1.0/vaultkey_cli-2.1.0.tar.gz"
+  sha256 "d6fd19421dcb6cca20bbed1340b663605c7eb8950cb2ad44e80e2b40c1b00d1b"
   license "MIT"
 
-  bottle do
-    root_url "https://github.com/dhruvkulkarni02/homebrew-vaultkey/releases/download/vaultkey-2.0.0"
-    sha256 cellar: :any, arm64_tahoe: "bd8b50b4550ce933c8af6e0b00a9ab28120001e530cd61dd3eea80257762de54"
+  livecheck do
+    url :stable
+    strategy :github_latest
   end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
   depends_on "python@3.13"
+
+  uses_from_macos "libffi"
 
   resource "argon2-cffi" do
     url "https://files.pythonhosted.org/packages/0e/89/ce5af8a7d472a67cc819d5d998aa8c82c5d860608c4db9f46f1162d7dab9/argon2_cffi-25.1.0.tar.gz"
@@ -57,9 +59,29 @@ class Vaultkey < Formula
     sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
+  resource "markdown-it-py" do
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
+  end
+
+  resource "mdurl" do
+    url "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
+    sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "prompt-toolkit" do
+    url "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz"
+    sha256 "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6"
+  end
+
   resource "pycparser" do
     url "https://files.pythonhosted.org/packages/da/a8/c5fdbeee588bb8ada9458774f43adf1bdd30bd59157055142183e769a024/pycparser-3.11.tar.gz"
     sha256 "d875f09c3507d00e1aba0eecc6dcadc1352f30fff09dc6bff2f1c2935e97c2bc"
+  end
+
+  resource "pygments" do
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "pyperclip" do
@@ -67,19 +89,29 @@ class Vaultkey < Formula
     sha256 "244035963e4428530d9e3a6101a1ef97209c6825edab1567beac148ccc1db1b6"
   end
 
+  resource "questionary" do
+    url "https://files.pythonhosted.org/packages/f6/45/eafb0bba0f9988f6a2520f9ca2df2c82ddfa8d67c95d6625452e97b204a5/questionary-2.1.1.tar.gz"
+    sha256 "3d7e980292bb0107abaa79c68dd3eee3c561b83a0f89ae482860b181c8bd412d"
+  end
+
   resource "requests" do
     url "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz"
     sha256 "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
   end
 
-  resource "tabulate" do
-    url "https://files.pythonhosted.org/packages/46/58/8c37dea7bbf769b20d58e7ace7e5edfe65b849442b00ffcdd56be88697c6/tabulate-0.10.0.tar.gz"
-    sha256 "e2cfde8f79420f6deeffdeda9aaec3b6bc5abce947655d17ac662b126e48a60d"
+  resource "rich" do
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
     sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
+  end
+
+  resource "wcwidth" do
+    url "https://files.pythonhosted.org/packages/69/4a/82d61476a1ccc20d43d0805724c5de4baa4971131a8db1816705ef53fe16/wcwidth-0.9.3.tar.gz"
+    sha256 "dfe7cfbd4cb59db9fe0931bd6091ab4a95b3acc5d56bfb50fa9fef0ccba5dc5c"
   end
 
   def install
@@ -88,6 +120,12 @@ class Vaultkey < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/vaultkey --version")
-    assert_match "Generating", shell_output("#{bin}/vk generate -l 20")
+
+    passwords = JSON.parse(shell_output("#{bin}/vk generate --count 2 --length 20 --json"))
+    assert_equal 2, passwords.length
+    assert_equal 20, passwords.first.length
+
+    ENV["VAULTKEY_VAULT"] = testpath/"vault"
+    assert_match "vk init", shell_output("#{bin}/vk status")
   end
 end
