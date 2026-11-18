@@ -3,8 +3,8 @@ class Vaultkey < Formula
 
   desc "Local, offline password manager with Argon2id and AES-256-GCM"
   homepage "https://github.com/dhruvkulkarni02/vaultkey"
-  url "https://github.com/dhruvkulkarni02/vaultkey/releases/download/v2.2.0/vaultkey_cli-2.2.0.tar.gz"
-  sha256 "7e1ac9614689e5dafd6a35dc1f71a4e3aa14603a79e563532fc7dbda0a1b6981"
+  url "https://github.com/dhruvkulkarni02/vaultkey/releases/download/v2.2.1/vaultkey_cli-2.2.1.tar.gz"
+  sha256 "1e24808dc0538c7b364d3f61305d6b0080f02c1b85936533d888e757f5e5c5a3"
   license "MIT"
 
   livecheck do
@@ -12,13 +12,6 @@ class Vaultkey < Formula
     strategy :github_latest
   end
 
-  bottle do
-    root_url "https://github.com/dhruvkulkarni02/homebrew-vaultkey/releases/download/vaultkey-2.2.0"
-    rebuild 1
-    sha256 cellar: :any, arm64_tahoe:   "c423bf9175f89038dbfc94f7ab80af5bc41da98e0c5855c422a1fbda6a1a2766"
-    sha256 cellar: :any, arm64_sequoia: "c72b20bf8bcc1c321da97180cfa32f60a12b43b4ec826a53fd56720072d73209"
-    sha256 cellar: :any, x86_64_linux:  "3ee7a201e2ff3918b0875c1622726ab7bb286c4c6c163c92f3c474ff2f794416"
-  end
 
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
