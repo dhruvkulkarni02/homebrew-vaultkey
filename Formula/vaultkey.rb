@@ -12,7 +12,6 @@ class Vaultkey < Formula
     strategy :github_latest
   end
 
-
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
