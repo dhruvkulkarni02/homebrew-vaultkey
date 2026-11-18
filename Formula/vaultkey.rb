@@ -12,6 +12,13 @@ class Vaultkey < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/dhruvkulkarni02/homebrew-vaultkey/releases/download/vaultkey-2.2.1"
+    sha256 cellar: :any, arm64_tahoe:   "1ee3e28162b0d072080f62efb52bc1ef9d2418d03e1aeed3e96a2e5355e70365"
+    sha256 cellar: :any, arm64_sequoia: "f7dfdea71e47d755d304dd2c1fb73a14a7c8a07f7e838356b605c3ee6cbc2354"
+    sha256 cellar: :any, x86_64_linux:  "505fc70743f479216899bc899b8dab509b614676a19af606bcb9409d2ffef64a"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
